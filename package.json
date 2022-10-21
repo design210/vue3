@@ -2,15 +2,19 @@
   "name": "book-vue3",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://design210.github.io/vue3/",
   "scripts": {
     "serve": "vite preview",
     "build": "vite build",
     "lint": "vue-cli-service lint",
-    "dev": "vite"
+    "dev": "vite",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
     "core-js": "^3.6.5",
+    "gh-pages": "^4.0.0",
     "roboto-fontface": "*",
     "sass": "^1.55.0",
     "vue": "^3.0.0",
@@ -21,6 +25,8 @@
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/eslint-parser": "^7.19.1",
     "@types/webfontloader": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
@@ -34,7 +40,9 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^6.7.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
     "prettier": "^2.2.1",
