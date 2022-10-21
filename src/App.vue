@@ -45,7 +45,6 @@ const store = useStore();
 const show = ref(false);
 const loadingStatus = computed(() => store.getters["common/loading"]);
 const windowWidth = computed(() => store.getters["common/windowWidth"]);
-const mobile = computed(() => store.getters["common/mobile"]);
 
 //윈도우 가로사이즈 계산
 let docWidth = window.innerWidth;

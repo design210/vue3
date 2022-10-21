@@ -8,6 +8,12 @@ const routes: Array<RouteRecordRaw> = [
     redirect: "/SearchOrder",
   },
   {
+    path: "/Login",
+    name: "Login",
+    component: () => import("@/views/login/Login.vue"),
+    meta: { unauthorized: true },
+  },
+  {
     path: "/SearchOrder",
     name: "SearchOrder",
     components: {
