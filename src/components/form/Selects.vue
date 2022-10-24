@@ -8,68 +8,60 @@
     />
   </div>
 </template>
-<script lang="ts" setup>
+<script setup>
 import { ref, defineProps, reactive } from "vue";
 //props
 const props = defineProps({
   list: Array,
 });
 const itemList = ref(props.list);
-const select = ref('');
+const select = ref(props.list[0].value);
 
 </script>
 
 <style lang="scss" scoped>
 .selects{
   max-width: 150px;
+  min-width:100px;
 }
 .selects:deep(.v-input){
   height:30px;
-  .v-field{
-    height:30px;
-  }
-}
-.selects:deep(.v-text-field--outlined){
-  fieldset {
+  .v-input__control{
     border: 1px solid #000;
-    border-radius: 0;
-    background-color: #fff;
-    height: 35px !important;
-  }
-  .v-select__slot {
-    height: 29px !important;
-  }
-}
-.selects:deep(.v-input__append-inner){
-  i {
-    background: url(../../assets/images/arrow_down.svg);
-    width: 15px;
-    height: 9px;
+    height:30px;
+    background-color:#fff;
+    .v-field{
+      height:30px;
+      padding-right:8px;
+      .v-field__overlay{
+        background-color:#fff;
+      }
+      .v-field__outline{
+        display:none;
+      }
+      .v-field__field{
+        .v-field__input{
+          padding:3px 6px 0 16px;
+        }
+      }
+      .v-field__append-inner{
+        padding-top:10px;
+        height:30px;
+          i {
+            background: url(../../assets/images/arrow_down.svg);
+            width: 15px;
+            height: 9px;
 
-    &:after {
-      content: "" !important;
-    }
+            &:after {
+              content: "" !important;
+            }
 
-    &:before {
-      content: "" !important;
+            &:before {
+              content: "" !important;
+            }
+          }
+      }
     }
-  }
-}
-.selects {
-  .v-select__selections {
-    padding: 0 !important;
-    .v-select__selection {
-      @include NotoSans(1.6, 500, #000);
-    }
-  }
-  .v-text-field__details {
-    display: none;
-  }
-  .v-input__append-inner {
-    margin-top: 4px !important;
-  }
-  .v-select__selection--comma {
-    margin: 3px 4px 3px 0 !important;
   }
 }
 @include mobile {

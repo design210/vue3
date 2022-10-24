@@ -23,6 +23,26 @@ const routes: Array<RouteRecordRaw> = [
     },
     meta: { unauthorized: true },
   },
+  {
+    path: "/Cart",
+    name: "Cart",
+    components: {
+      lnb,
+      footer,
+      contents: () => import("@/views/cart/Cart.vue"),
+    },
+    meta: { unauthorized: true },
+  },
+  {
+    path: "/OrderList",
+    name: "OrderList",
+    components: {
+      lnb,
+      footer,
+      contents: () => import("@/views/order/OrderList.vue"),
+    },
+    meta: { unauthorized: true },
+  },
 ];
 
 const router = createRouter({
