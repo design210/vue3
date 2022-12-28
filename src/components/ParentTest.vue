@@ -13,7 +13,10 @@
     
 <script setup lang='ts'>
 import ChildTestVue from './ChildTest.vue';
-import { ref } from "vue";
+import { ref, getCurrentInstance } from "vue";
+const global = getCurrentInstance()?.proxy;
+console.log(global?.$route);
+
 const child = ref(null);
 const childCall = () => {
   child?.value?.childrenFunc();
