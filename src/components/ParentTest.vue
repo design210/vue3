@@ -14,9 +14,9 @@
 <script setup lang='ts'>
 import ChildTestVue from './ChildTest.vue';
 import { ref } from "vue";
-const child = ref("");
+const child = ref(null);
 const childCall = () => {
-  child.value.childrenFunc();
+  child?.value?.childrenFunc();
 };
 </script>
     
