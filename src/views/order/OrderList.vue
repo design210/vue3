@@ -6,18 +6,22 @@
         변경
       </button>
     </div>
+    <ParentTestVue />
   </section>
 </template>
 
 <script lang="ts" setup>
-import {ref, defineProps, computed} from 'vue';
+import ParentTestVue from '@/components/ParentTest.vue';
+import {ref, defineProps, computed, onMounted} from 'vue';
 import { useStore } from "vuex";
 const store = useStore();
 const testVuex = computed(() => {return store.getters["common/test"];});
 const handleChange = () => {
   store.commit('common/setTestState', 1);
 };
-
+onMounted(() => {
+  store.commit('common/setTestState', 0); //초기화
+});
 const props = defineProps({
   subject1: String,
   subject2: String

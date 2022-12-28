@@ -31,7 +31,7 @@ export const common = {
       state.mobile = payload;
     },
     setTestState(state, payload) {
-      state.test = 1;
+      state.test = payload;
     }
   },
   actions: {
