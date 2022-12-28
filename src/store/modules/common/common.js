@@ -1,9 +1,10 @@
 export const common = {
   namespaced: true,
   state: () => ({
-    loading: false,
+    session:false,
     windowWidth: 0,
     mobile: false,
+    test:0,
   }),
   getters: {
     loading: state => {
@@ -15,6 +16,9 @@ export const common = {
     mobile: state => {
       return state.mobile;
     },
+    test: state => {
+      return state.test;
+    }
   },
   mutations: {
     setLoading(state, payload) {
@@ -26,6 +30,9 @@ export const common = {
     setDeviceStatus(state, payload) {
       state.mobile = payload;
     },
+    setTestState(state, payload) {
+      state.test = 1;
+    }
   },
   actions: {
   }

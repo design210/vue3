@@ -1,40 +1,29 @@
 <template>
   <section>
-    <h2 class="sub-title">
-      주문 목록 보기
-    </h2>
-    <section class="sub-container">
-      <h3>출판사별 주문 리스트</h3>
-      <section class="mt10">
-        <SearchDateRangeGroup :item-list="itemList" />
-      </section>
-      <section class="mt30">
-        <OrderList
-          subject1="회신일시"
-          subject2="발신일시"
-        />
-      </section>
-    </section>
+    <div>{{ testVuex }}</div>
+    <div>
+      <button @click="handleChange">
+        변경
+      </button>
+    </div>
   </section>
 </template>
 
-<script lang="ts">
-import SearchDateRangeGroup from "@/components/form/SearchDateRangeGroup.vue";
-import OrderList from "@/components/order/OrderList.vue";
-export default {
-  components: { SearchDateRangeGroup, OrderList },
-  data() {
-    return {
-      select: "",
-      itemList: [
-        { item: "책 제목", value: "01" },
-        { item: "ISBN", value: "02" },
-        { item: "저자", value: "03" },
-        { item: "출판사", value: "04" },
-      ],
-    };
-  },
+<script lang="ts" setup>
+import {ref, defineProps, computed} from 'vue';
+import { useStore } from "vuex";
+const store = useStore();
+const testVuex = computed(() => {return store.getters["common/test"];});
+const handleChange = () => {
+  store.commit('common/setTestState', 1);
 };
+
+const props = defineProps({
+  subject1: String,
+  subject2: String
+});
+const subjectA = ref(props.subject1);
+const subjectB = ref(props.subject2);
 </script>
 
 <style lang="scss" scoped>

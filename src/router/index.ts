@@ -5,40 +5,12 @@ const footer = () => import("@/components/common/Footer.vue");
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/SearchOrder",
-  },
-  {
-    path: "/Login",
-    name: "Login",
-    component: () => import("@/views/login/Login.vue"),
-    meta: { unauthorized: true },
-  },
-  {
-    path: "/SearchOrder",
-    name: "SearchOrder",
-    components: {
-      lnb,
-      footer,
-      contents: () => import("@/views/order/SearchOrder.vue"),
-    },
-    meta: { unauthorized: true },
-  },
-  {
-    path: "/Cart",
-    name: "Cart",
-    components: {
-      lnb,
-      footer,
-      contents: () => import("@/views/cart/Cart.vue"),
-    },
-    meta: { unauthorized: true },
+    redirect: "/OrderList",
   },
   {
     path: "/OrderList",
     name: "OrderList",
     components: {
-      lnb,
-      footer,
       contents: () => import("@/views/order/OrderList.vue"),
     },
     meta: { unauthorized: true },

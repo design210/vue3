@@ -1,28 +1,7 @@
 <template>
   <v-app>
     <v-main class="main-container">
-      <div class="layout-wrap">
-        <div class="layout-right">
-          <router-view
-            name="lnb"
-            :show="show"
-            @close="close"
-          />
-        </div>
-        <div class="layout-left">
-          <div
-            class="hamburg-menu"
-            @click="showLnb"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <router-view name="contents" />
-          <router-view name="footer" />
-        </div>
-      </div>
-      <router-view />
+      <router-view name="contents" />
       <v-progress-circular
         v-if="loadingStatus"
         :size="70"
