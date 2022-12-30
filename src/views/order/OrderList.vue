@@ -12,8 +12,12 @@
 
 <script lang="ts" setup>
 import ParentTestVue from '@/components/ParentTest.vue';
-import {ref, defineProps, computed, onMounted} from 'vue';
+import {ref, defineProps, computed, onMounted, reactive} from 'vue';
 import { useStore } from "vuex";
+import {useRef} from '@/hooks/hookExample.js';
+const {ex, aaa} = useRef();
+console.log(ex.a, aaa.value);
+
 const store = useStore();
 const testVuex = computed(() => {return store.getters["common/test"];});
 const handleChange = () => {
