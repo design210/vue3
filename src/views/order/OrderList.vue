@@ -24,7 +24,7 @@ const handleChange = () => {
   store.commit('common/setTestState', 1);
 };
 onMounted(() => {
-  store.commit('common/setTestState', 0); //초기화
+  //store.commit('common/setTestState', 0); //초기화
 });
 const props = defineProps({
   subject1: String,

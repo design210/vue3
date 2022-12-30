@@ -4,7 +4,7 @@ import { adb } from "@/store/modules/common/adb";
 import { bbb } from "@/store/modules/common/bbb";
 import createPersistedState from "vuex-persistedstate";
 export default createStore({
-  modules: { common, adb, bbb },
+  modules: { common },
   plugins: [
     createPersistedState({
       //여기에 쓴 모듈만 저장됩니다.
