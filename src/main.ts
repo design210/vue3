@@ -4,5 +4,8 @@ import router from "./router";
 // @ts-ignore
 import store from "./store/index.js";
 import vuetify from "./plugins/vuetify";
-
-createApp(App).use(router).use(store).use(vuetify).mount("#app");
+import dayjs from 'dayjs';
+const app  = createApp(App);
+app.config.globalProperties.$dayjs = dayjs;
+app.config.globalProperties.$name = '글로벌 변수';
+app.use(router).use(store).use(vuetify).mount("#app");

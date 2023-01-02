@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div>{{ testVuex }}</div>
+    <div>{{ testVuex }}, {{ $name }}</div>
     <div>
       <button @click="handleChange">
         변경
@@ -12,20 +12,26 @@
 
 <script lang="ts" setup>
 import ParentTestVue from '@/components/ParentTest.vue';
-import {ref, defineProps, computed, onMounted, reactive} from 'vue';
+import {ref, defineProps, computed, onMounted, reactive, getCurrentInstance } from 'vue';
 import { useStore } from "vuex";
-import {useRef} from '@/hooks/hookExample.js';
+import { useRef } from '@/hooks/hookExample.js';
 const {ex, aaa} = useRef();
 console.log(ex.a, aaa.value);
+
+//global property
+const global = getCurrentInstance().proxy;
+console.log('===>', global?.$dayjs().format('YYYY.MM.DD'));
+
 
 const store = useStore();
 const testVuex = computed(() => {return store.getters["common/test"];});
 const handleChange = () => {
   store.commit('common/setTestState', 1);
 };
-onMounted(() => {
+onMounted(() => {  
   //store.commit('common/setTestState', 0); //초기화
 });
+
 const props = defineProps({
   subject1: String,
   subject2: String
