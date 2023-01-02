@@ -17,8 +17,15 @@
 <script setup lang='ts'>
 import ChildTestVue from './ChildTest.vue';
 import { ref, reactive, getCurrentInstance } from "vue";
+import { useRouter, useRoute } from 'vue-router';
+import { useStore } from "vuex";
 const global = getCurrentInstance()?.proxy;
 console.log(global?.$route);
+
+const router = useRouter();
+const route = useRoute();
+const store = useStore();
+console.log(router, route, store );
 
 const auth = reactive({name:'Jone'});
 const handlenameChange = () => {
