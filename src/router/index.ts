@@ -13,6 +13,14 @@ const routes: Array<RouteRecordRaw> = [
     },
     meta: { unauthorized: true },
   },
+  {
+    path: "/RouterComponent",
+    name: "RouterComponent",
+    components: {
+      contents: () => import("@/views/order/RouterComponent.vue"),
+    },
+    meta: { unauthorized: true },
+  },
 ];
 
 const router = createRouter({

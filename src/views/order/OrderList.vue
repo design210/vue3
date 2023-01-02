@@ -7,6 +7,9 @@
       </button>
     </div>
     <ParentTestVue />
+    <button @click="go">
+      go
+    </button>
   </section>
 </template>
 
@@ -15,8 +18,10 @@ import ParentTestVue from '@/components/ParentTest.vue';
 import {ref, defineProps, computed, onMounted, reactive, getCurrentInstance } from 'vue';
 import { useStore } from "vuex";
 import { useRef } from '@/hooks/hookExample.js';
+import { useRouter } from 'vue-router';
 const {ex, aaa} = useRef();
 console.log(ex.a, aaa.value);
+
 
 //global property
 const global = getCurrentInstance()?.proxy;
@@ -31,6 +36,15 @@ const handleChange = () => {
 onMounted(() => {  
   //store.commit('common/setTestState', 0); //초기화
 });
+
+
+//router ex
+const router = useRouter();
+const go = () => {
+  router.replace('/RouterComponent');
+  
+};
+
 
 const props = defineProps({
   subject1: String,
