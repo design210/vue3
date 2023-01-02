@@ -44,4 +44,5 @@ const subjectB = ref(props.subject2);
 h3 {
   @include NotoSans(1.6, 500, #000);
 }
+.a:deep(.b){}
 </style>
