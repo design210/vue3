@@ -19,7 +19,7 @@ const {ex, aaa} = useRef();
 console.log(ex.a, aaa.value);
 
 //global property
-const global = getCurrentInstance().proxy;
+const global = getCurrentInstance()?.proxy;
 console.log('===>', global?.$dayjs().format('YYYY.MM.DD'));
 
 
