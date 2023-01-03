@@ -4,7 +4,7 @@ import router from "./router";
 // @ts-ignore
 import store from "./store/index.js";
 import vuetify from "./plugins/vuetify";
-import dayjs from 'dayjs';
+import * as dayjs from 'dayjs';
 const app  = createApp(App);
 
 declare module '@vue/runtime-core' {
