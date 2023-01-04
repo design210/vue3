@@ -22,10 +22,10 @@ const routes: Array<RouteRecordRaw> = [
     meta: { unauthorized: true },
   },
   {
-    path: "/Camera",
-    name: "Camera",
+    path: "/CameraTest",
+    name: "CameraTest",
     components: {
-      contents: () => import("@/views/Camera.vue"),
+      contents: () => import("@/views/CameraTest.vue"),
     },
     meta: { unauthorized: true },
   },

@@ -2,20 +2,16 @@
   "name": "book-vue3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://design210.github.io/vue3/",
   "scripts": {
     "serve": "vite preview",
     "build": "vite build",
     "lint": "vue-cli-service lint",
-    "dev": "vite",
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build"
+    "dev": "vite"
   },
   "dependencies": {
     "@mdi/font": "7.1.96",
     "core-js": "^3.26.1",
     "dayjs": "^1.11.7",
-    "gh-pages": "^4.0.0",
     "jsdoc": "^4.0.0",
     "roboto-fontface": "*",
     "sass": "^1.57.0",

@@ -13,7 +13,7 @@ export default defineConfig({
       autoImport: true,
     }),
   ],
-  base:  process.env.NODE_ENV === "production" ? "/vue3/" : "/",
+  //base:  process.env.NODE_ENV === "production" ? "/vue3/" : "/",
   define: { "process.env": {} },
   resolve: {
     alias: {
