@@ -9,11 +9,14 @@
       ref="video"
       @canplay="initCanvas()"
     >stream</video>
-    <button>click</button>
+    <button @click="takePicture">
+      click
+    </button>
     <canvas
       ref="canvas"
       style="display:none"
     ></canvas>
+    <img :src="imgUrl" />
   </div>
 </template>
 
@@ -40,8 +43,7 @@ export default {
     },
     takePicture(){
       let context = this.canvas.getContext("2d").drawImage(this.video, 0, 0, this.video.videoWidth, this.video.videoHeight);
-      this.$emit('picture-taken', this.canvas.toDataURL('image/png'));
-      console.log(this.canvas.toDataURL('image/png'));
+      this.imgUrl = this.canvas.toDataURL('image/png');
     },
     initCanvas(){
       this.canvas.setAttribute('width', this.video.videoWidth);
