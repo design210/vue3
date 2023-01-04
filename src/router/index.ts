@@ -21,6 +21,14 @@ const routes: Array<RouteRecordRaw> = [
     },
     meta: { unauthorized: true },
   },
+  {
+    path: "/Camera",
+    name: "Camera",
+    components: {
+      contents: () => import("@/views/Camera.vue"),
+    },
+    meta: { unauthorized: true },
+  },
 ];
 
 const router = createRouter({
