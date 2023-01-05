@@ -14,6 +14,10 @@
     <button @click="go">
       go
     </button>
+    <button @click="setArr">
+      setArr
+    </button>
+    <div>{{ arr }}</div>
   </section>
 </template>
 
@@ -88,6 +92,14 @@ const props = defineProps({
 });
 const subjectA = ref(props.subject1);
 const subjectB = ref(props.subject2);
+
+const arr = ref<Array<Number>>([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+const setArr = () => {
+  arr.value.splice(4, 1);
+  arr.value.splice(0, 0, 5);
+  console.log(arr.value);
+};
+
 </script>
 
 <style lang="scss" scoped>
