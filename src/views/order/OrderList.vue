@@ -100,6 +100,15 @@ const setArr = () => {
   console.log(arr.value);
 };
 
+// 맵핑 함수의 첫 번째 인자 언더스코어(_) 는 특별한 인자가 아니라,
+// 불필요한 인자의 공간을 채우기 위한 용도입니다.
+const currYear = new Date().getFullYear();
+const lastYear = 2020;
+
+const year = Array.from({ length: currYear - lastYear + 1 }, (_, index) => lastYear + index).reverse();
+console.log('year', year);
+
+
 </script>
 
 <style lang="scss" scoped>
